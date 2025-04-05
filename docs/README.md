@@ -1,6 +1,6 @@
-# Electron GUI for Python
+# NetBlade
 
-A simple example on how to create an electron GUI for a python program and interacting with it.
+An electron application that blocks IP addresses using the firewall and writes domains to the hosts file.
 
 ## How does it work ( simple representation )
 
@@ -47,33 +47,16 @@ These two programs than communicate via standard streams.
 
 Install Node.js and Python.
 
-> ote that installation may be different for different operating systems
+You will also need to install the win10toast python package.
 
-## Installation Guide
-
-1. To download and install [electron](https://electron.atom.io) ( OS X or Linux ) you have to download it from [npm-electron](https://www.npmjs.com/package/electron) using :
-
-   ```
-   npm install electron --save-dev
-   ```
-
-   ```
-   npm install -g electron
-   ```
-
-   ( if you don't have npm installed use this [link](https://nodejs.org/en/download/) to download it. )
-
-2. Clone this repository:
-   ```
-   git clone https://github.com/keybraker/python-gui-electron.git
-   ```
+> Note that installation may be different for different operating systems
 
 ## Execution Guide
 
 1. Open a terminal window and cd to cloned project
 
    ```
-   cd python-gui-electron
+   cd NetBlade
    ```
 
 2. Initialize the electron application (first-time)
@@ -88,41 +71,6 @@ Install Node.js and Python.
    npm start
    ```
 
-4. A page should spawn looking as follows:
-
-![alt text](../images/screenshot_2.png)
-
-1. Press **LAUNCH PROGRAM\_** button
-
-   this will launch a python application with a loop inside,
-   that is waiting for data to be send from js
-
-2. Press **INTERACT WITH PROGRAM** button
-
-   this will send a message named "hello" from js to python
-   and python will read it and print a message
-
-3. Press **TERMINATE PROGRAM** button
-
-   a termination message ("terminate") is sent to the program which knows
-   to stop the loop and execution
-
-4. Press **HOW TO OPEN A FILE** button
-
-   from `electron/guiExample.js` an ipc.send message is sent to the main.js
-   which will then read and output `config.json` values (fast feature to store settings).
-
 ### Interpretation Guide
 
-Important functionality can be found in files `electron/guiExample.js` where the core of electron is. Listeners are implemented there awaiting for click events to trigger initialization of program, communication and termination. The program `python/pythonExample.py` which is the external or 3rd party application that electron calls, is a simple for-loop awaiting commands. It responds to commands and terminates when sent an empty string, "terminate" or by pressing the terminate program button.
-
-## Authors
-
-- **Ioannis Tsiakkas** - _(Keybraker)_ - [Keybraker](https://github.com/keybraker)
-
-[![Python 2 Version](https://img.shields.io/badge/Python-2.7.16-green.svg)](https://www.python.org/downloads/)
-[![Python 3 Version](https://img.shields.io/badge/Python-3.11.3-green.svg)](https://www.python.org/download/releases/3.0/)
-[![Electron Version](https://img.shields.io/badge/electron-v23.3.0-green.svg)](https://electron.atom.io)
-[![Windows](https://img.shields.io/badge/Windows-v11-green.svg)](https://www.apple.com/lae/macos/big-sur/)
-[![OSX Version](https://img.shields.io/badge/OS%20X-v13.1-green.svg)](https://www.apple.com/lae/macos/big-sur/)
-[![Ubuntu](https://img.shields.io/badge/Ubuntu-v20.0.4-green.svg)](https://ubuntu.com)
+Important functionality can be found in files `electron/app.js` where the core of electron is. Listeners are implemented there awaiting for click events to trigger initialization of program, communication and termination. The program `python/blocker.py` which is the external or 3rd party application that electron calls, is a simple for-loop awaiting commands. It responds to commands and terminates when sent an empty string, "terminate" or by pressing the terminate program button.
