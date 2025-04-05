@@ -32,12 +32,12 @@ These two programs than communicate via standard streams.
 ├── images
 │   └── ...
 |
-├── guiExample.html
-├── guiExample.css
-├── guiExample.js
+├── index.html
+├── style.css
+├── app.js
 ├── main.js
 │
-├── pythonExample.py
+├── blocker.py
 |
 ├── config.json
 └── package.json
