@@ -1,4 +1,4 @@
-import sys, requests, subprocess, time
+import sys, requests, subprocess
 from win10toast import ToastNotifier
 
 # constants
