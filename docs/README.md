@@ -49,6 +49,10 @@ Install Node.js and Python.
 
 You will also need to install the win10toast python package.
 
+```
+pip install win10toast
+```
+
 > Note that installation may be different for different operating systems
 
 ## Execution Guide
@@ -74,3 +78,8 @@ You will also need to install the win10toast python package.
 ### Interpretation Guide
 
 Important functionality can be found in files `electron/app.js` where the core of electron is. Listeners are implemented there awaiting for click events to trigger initialization of program, communication and termination. The program `python/blocker.py` which is the external or 3rd party application that electron calls, is a simple for-loop awaiting commands. It responds to commands and terminates when sent an empty string, "terminate" or by pressing the terminate program button.
+
+
+### Installing the App
+
+On the repository page, go to releases and download the zip file. Uzip it and go to `make/squirrel.windows/x64` and open `NetBlade-0.1.0.Setup.exe`. It should take a couple of seconds and the app will open by itself. Close it and find the installation directory. Once there, go to `app-0.1.0` and place the `python` folder that was in the zip file.
