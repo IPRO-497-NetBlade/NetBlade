@@ -7,6 +7,8 @@ const nodeConsole = require("console");
 const myConsole = new nodeConsole.Console(process.stdout, process.stderr);
 let child;
 
+if(require('electron-squirrel-startup')) app.quit();
+
 function printBoth(str) {
   console.log("main.js:    " + str);
   myConsole.log("main.js:    " + str);
